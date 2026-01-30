@@ -7,7 +7,7 @@ public class ItemSpawner : MonoBehaviour
     {
         if(ItemSpawnerManager.instance != null)
         {
-            ItemSpawnerManager.instance.addToItemSpawnerList(this);
+            AddToItemManagerSpawnerList();
         }
         else
         {
@@ -18,6 +18,10 @@ public class ItemSpawner : MonoBehaviour
     {
         Instantiate(itemData.prefab, gameObject.transform.position, gameObject.transform.rotation);
         ItemSpawnerManager.instance.removeFromItemSpawnerList(this);
+    }
+    public void AddToItemManagerSpawnerList()
+    {
+        ItemSpawnerManager.instance.addToItemSpawnerList(this);
     }
 
 }
