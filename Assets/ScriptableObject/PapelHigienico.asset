@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6f4bf1465e80ef4895333c03170fcb5, type: 3}
-  m_Name: NewItem
+  m_Name: PapelHigienico
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  id: 
-  itemName: 
-  icon: {fileID: 0}
-  prefab: {fileID: 0}
-  stackable: 0
+  id: PapelHigienico
+  itemName: "PapelHigi\xE9nico"
+  prefab: {fileID: 912376076098791226, guid: 4a32547fe302f824bb0a3a3df6794f8b, type: 3}
