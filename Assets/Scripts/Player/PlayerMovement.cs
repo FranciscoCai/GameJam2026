@@ -10,14 +10,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float maxBackwardSpeed = 6f;
 
     [Header("Rotation")]
-    [SerializeField] private float baseTurnSpeed = 120f;
-    [SerializeField] private float turnSpeedAtMaxVelocity = 40f;
+    [SerializeField] private float turnAcceleration = 300f;
+    [SerializeField] private float turnDeceleration = 400f;
+    [SerializeField] private float maxTurnSpeed = 140f; 
+    [SerializeField] private float maxTurnSpeedAtMaxVelocity = 60f;
 
     private InputSystem_Actions inputActions;
     private CharacterController characterController;
 
     private Vector2 moveInput;
+
     private float currentSpeed;
+    private float currentTurnSpeed;
 
     private void Awake()
     {
@@ -53,28 +57,44 @@ public class PlayerMovement : MonoBehaviour
     private void HandleMovement()
     {
         float forwardInput = moveInput.y;
+        float turnInput = moveInput.x;
+
+        bool isTurning = Mathf.Abs(turnInput) > 0.5f;
 
         if (Mathf.Abs(forwardInput) > 0.01f)
         {
-            currentSpeed -= forwardInput * acceleration * Time.deltaTime;
+            currentSpeed += forwardInput * acceleration * Time.deltaTime;
         }
         else
         {
-            currentSpeed = Mathf.MoveTowards(currentSpeed, 0f, deceleration * Time.deltaTime);
+            currentSpeed = Mathf.MoveTowards(currentSpeed,0f,deceleration *  Time.deltaTime);
         }
 
         currentSpeed = Mathf.Clamp(currentSpeed,-maxBackwardSpeed,maxForwardSpeed);
 
-        Vector3 forwardMovement = transform.forward * currentSpeed;
-        characterController.Move(forwardMovement * Time.deltaTime);
+        Vector3 move = transform.forward * currentSpeed * -1;
+        characterController.Move(move * Time.deltaTime);
     }
 
     private void HandleRotation()
     {
         float turnInput = moveInput.x;
-        float speedPercent = Mathf.Abs(currentSpeed) / maxForwardSpeed;
-        float turnSpeed = Mathf.Lerp(baseTurnSpeed,turnSpeedAtMaxVelocity,speedPercent);
 
-        transform.Rotate(Vector3.up * turnInput * turnSpeed * Time.deltaTime);
+        float speedPercent = Mathf.Abs(currentSpeed) / maxForwardSpeed;
+
+        float effectiveMaxTurnSpeed = Mathf.Lerp(maxTurnSpeed,maxTurnSpeedAtMaxVelocity,speedPercent);
+
+        if (Mathf.Abs(turnInput) > 0.01f)
+        {
+            currentTurnSpeed +=turnInput *turnAcceleration *(1f - speedPercent) *Time.deltaTime;
+        }
+        else
+        {
+            currentTurnSpeed = Mathf.MoveTowards(currentTurnSpeed,0f,turnDeceleration * Time.deltaTime);
+        }
+
+        currentTurnSpeed = Mathf.Clamp(currentTurnSpeed,-effectiveMaxTurnSpeed,effectiveMaxTurnSpeed);
+
+        transform.Rotate(Vector3.up * currentTurnSpeed * Time.deltaTime);
     }
 }

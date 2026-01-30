@@ -476,8 +476,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   acceleration: 4
-  deceleration: 4
-  maxForwardSpeed: 9
-  maxBackwardSpeed: 5
-  baseTurnSpeed: 80
-  turnSpeedAtMaxVelocity: 40
+  deceleration: 2
+  maxForwardSpeed: 4
+  maxBackwardSpeed: 2
+  turnAcceleration: 120
+  turnDeceleration: 120
+  maxTurnSpeed: 100
+  maxTurnSpeedAtMaxVelocity: 80
