@@ -1433,6 +1433,7 @@ GameObject:
   - component: {fileID: 1657917462184548096}
   - component: {fileID: 3566102027154806497}
   - component: {fileID: 6197011208443767883}
+  - component: {fileID: 3048523205323691754}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1456,7 +1457,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -8, y: -379}
+  m_AnchoredPosition: {x: -8, y: -380}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3566102027154806497
@@ -1497,6 +1498,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3048523205323691754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7269270530820063215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014c165424fe381429ad718334170dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Mascarilla
+  fallSpeed: 25
+  returnSpeed: 500
+  movementScript: {fileID: 959163787197424355}
+  dashScript: {fileID: 6726992894996672339}
 --- !u!1 &7290148168549924403
 GameObject:
   m_ObjectHideFlags: 0
