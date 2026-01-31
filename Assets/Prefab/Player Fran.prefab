@@ -894,7 +894,6 @@ GameObject:
   - component: {fileID: 959163787197424355}
   - component: {fileID: 7118248831130346860}
   - component: {fileID: 3583925157998610360}
-  - component: {fileID: 8174193138712423637}
   - component: {fileID: 2578713240297879435}
   m_Layer: 0
   m_Name: Player Fran
@@ -967,8 +966,10 @@ MonoBehaviour:
   deceleration: 2
   maxForwardSpeed: 5
   maxBackwardSpeed: 3
-  baseTurnSpeed: 100
-  turnSpeedAtMaxVelocity: 80
+  rotationSpeedFactor: 0.5
+  rotationAcceleration: 180
+  rotationDeceleration: 360
+  maxRotationSpeed: 180
 --- !u!54 &7118248831130346860
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1019,27 +1020,6 @@ CapsuleCollider:
   m_Height: 1.75
   m_Direction: 1
   m_Center: {x: 0, y: -0.2, z: 0}
---- !u!114 &8174193138712423637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8024753543956300365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bec977da8bcb324aa4ae4eca6461025, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Inventory
-  inventoryItems:
-  - {fileID: 8894435847135011855}
-  - {fileID: 5943787852352049960}
-  - {fileID: 1757858568617872294}
-  - {fileID: 2352688343401610677}
-  - {fileID: 6971591591642812965}
-  - {fileID: 6855660466377402980}
-  removeItemMin: 2
-  removeItemMax: 4
 --- !u!114 &2578713240297879435
 MonoBehaviour:
   m_ObjectHideFlags: 0

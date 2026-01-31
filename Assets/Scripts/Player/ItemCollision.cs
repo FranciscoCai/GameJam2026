@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemCollision : MonoBehaviour
@@ -8,7 +9,24 @@ public class ItemCollision : MonoBehaviour
         if (inventory != null)
         {
             WorldItem worldItem = other.gameObject.GetComponent<WorldItem>();
-            if(inventory.HasItem(worldItem))
+            if(ItemRequiredManager.Instance != null)
+            {
+                List<ItemData> requiredItems = ItemRequiredManager.Instance.GetItemList();
+                bool isRequired = false;
+                foreach (ItemData itemData in requiredItems)
+                {
+                    if (worldItem != null && worldItem.itemData == itemData)
+                    {
+                        isRequired = true;
+                        break;
+                    }
+                }
+                if (!isRequired)
+                {
+                    return;
+                }
+            }
+            if (inventory.HasItem(worldItem))
             {
                 return;
             }
