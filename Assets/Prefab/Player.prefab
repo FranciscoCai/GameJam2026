@@ -1721,6 +1721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemCollision
   inventory: {fileID: 7571258122196192041}
+  PickParticle: {fileID: 8578738849280779475, guid: 897575d575358984baea37ebdfae2a79, type: 3}
 --- !u!1 &8833255328655864865
 GameObject:
   m_ObjectHideFlags: 0
