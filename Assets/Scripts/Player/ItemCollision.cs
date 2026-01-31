@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -34,8 +35,14 @@ public class ItemCollision : MonoBehaviour
             if (worldItem != null)
             {
                 Instantiate(PickParticle, worldItem.transform.position, Quaternion.identity);
+                StartCoroutine(DestroyParticle(PickParticle));
                 inventory.AddItem(worldItem);
             }
         }
+    }
+    private IEnumerator DestroyParticle(GameObject ParticleToDestroy)
+    {
+        yield return new WaitForSeconds(2f);
+        Destroy(ParticleToDestroy);
     }
 }
