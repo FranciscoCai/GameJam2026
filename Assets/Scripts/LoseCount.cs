@@ -27,7 +27,6 @@ public class LoseCount : MonoBehaviour
             SceneManager.LoadScene("LoseScene");
             return;
         }
-        Debug.Log(timeLeft);
         UpdateTimerUI();
     }
 

@@ -12,6 +12,7 @@ public class PlayerDash : MonoBehaviour
     [Header("References")]
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private VfxCollision vfx;
+    [SerializeField] private SpeedController vfxV;
 
     private InputSystem_Actions inputActions;
     private Rigidbody rb;
@@ -40,7 +41,7 @@ public class PlayerDash : MonoBehaviour
     {
         if (isDashing)
             return;
-
+        StartCoroutine(vfxV.actionLines());
         StartCoroutine(DashRoutine());
     }
 
@@ -65,7 +66,6 @@ public class PlayerDash : MonoBehaviour
         }
 
         isDashing = false;
-
         if (playerMovement != null)playerMovement.enabled = true;
         if (vfx != null) vfx.enabled = false;
     }
