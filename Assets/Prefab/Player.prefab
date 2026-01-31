@@ -285,11 +285,11 @@ Transform:
   m_GameObject: {fileID: 818682409855380744}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 1.08, z: 1.33}
+  m_LocalPosition: {x: -0.010009766, y: 1.0800171, z: 1.3299999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1409714941403351673}
+  m_Father: {fileID: 5953323787151945571}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!2083052967 &6477214604278477892
 VisualEffect:
@@ -310,7 +310,10 @@ VisualEffect:
     m_Float:
       m_Array: []
     m_Vector2f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 0, y: 0}
+        m_Name: SpawnRate
+        m_Overridden: 0
     m_Vector3f:
       m_Array:
       - m_Value: {x: 0, y: 0, z: 0}
@@ -393,8 +396,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpeedController
   vfxGraph: {fileID: 6477214604278477892}
   playerCamera: {fileID: 6652653164241063069}
+  duration: 1.5
+  spawnRate: 0
   orbDistanceBehind: 3
-  spawnDistanceInFront: 1.5
+  spawnDistanceInFront: 1.7
 --- !u!1 &857499748650647241
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,7 +1244,6 @@ Transform:
   m_Children:
   - {fileID: 4499790222512839016}
   - {fileID: 3799596966640124585}
-  - {fileID: 907837303518047175}
   m_Father: {fileID: 5953323787151945571}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4873345077923046109
@@ -1408,7 +1412,7 @@ Transform:
   m_GameObject: {fileID: 5367689727438621578}
   serializedVersion: 2
   m_LocalRotation: {x: -0.07388829, y: -0.0000035367816, z: -0.000000262043, w: -0.99726653}
-  m_LocalPosition: {x: -0.029000044, y: 0.442, z: 0.03000021}
+  m_LocalPosition: {x: -0.029000044, y: 0.27, z: -0.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1793,6 +1797,7 @@ Transform:
   - {fileID: 6652653164241063069}
   - {fileID: 7606481696204941010}
   - {fileID: 2771112926097160711}
+  - {fileID: 907837303518047175}
   - {fileID: 5245819417310083193}
   - {fileID: 1409714941403351673}
   m_Father: {fileID: 0}
@@ -1914,6 +1919,7 @@ MonoBehaviour:
   dashDeceleration: 5
   playerMovement: {fileID: 959163787197424355}
   vfx: {fileID: 229967739286968081}
+  vfxV: {fileID: 322424202293325893}
 --- !u!114 &8935851645503052779
 MonoBehaviour:
   m_ObjectHideFlags: 0
