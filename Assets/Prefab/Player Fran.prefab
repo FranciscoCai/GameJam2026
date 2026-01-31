@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 7118248831130346860}
   - component: {fileID: 6487762708626637406}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player Fran
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

@@ -788,34 +788,26 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 959163787197424355, guid: 3d6ba0d06b3f9cb42b2550914c4be40d, type: 3}
       propertyPath: acceleration
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 959163787197424355, guid: 3d6ba0d06b3f9cb42b2550914c4be40d, type: 3}
       propertyPath: deceleration
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 959163787197424355, guid: 3d6ba0d06b3f9cb42b2550914c4be40d, type: 3}
-      propertyPath: maxTurnSpeed
+      propertyPath: baseTurnSpeed
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 959163787197424355, guid: 3d6ba0d06b3f9cb42b2550914c4be40d, type: 3}
       propertyPath: maxForwardSpeed
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 959163787197424355, guid: 3d6ba0d06b3f9cb42b2550914c4be40d, type: 3}
       propertyPath: maxBackwardSpeed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 959163787197424355, guid: 3d6ba0d06b3f9cb42b2550914c4be40d, type: 3}
-      propertyPath: turnAcceleration
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 959163787197424355, guid: 3d6ba0d06b3f9cb42b2550914c4be40d, type: 3}
-      propertyPath: turnDeceleration
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 959163787197424355, guid: 3d6ba0d06b3f9cb42b2550914c4be40d, type: 3}
-      propertyPath: maxTurnSpeedAtMaxVelocity
+      propertyPath: turnSpeedAtMaxVelocity
       value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5953323787151945571, guid: 3d6ba0d06b3f9cb42b2550914c4be40d, type: 3}
@@ -857,6 +849,10 @@ PrefabInstance:
     - target: {fileID: 5953323787151945571, guid: 3d6ba0d06b3f9cb42b2550914c4be40d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118248831130346860, guid: 3d6ba0d06b3f9cb42b2550914c4be40d, type: 3}
+      propertyPath: m_Constraints
+      value: 116
       objectReference: {fileID: 0}
     - target: {fileID: 8024753543956300365, guid: 3d6ba0d06b3f9cb42b2550914c4be40d, type: 3}
       propertyPath: m_Name

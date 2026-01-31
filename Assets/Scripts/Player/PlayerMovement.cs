@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
@@ -10,23 +10,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float maxBackwardSpeed = 6f;
 
     [Header("Rotation")]
-    [SerializeField] private float turnAcceleration = 300f;
-    [SerializeField] private float turnDeceleration = 400f;
-    [SerializeField] private float maxTurnSpeed = 140f; 
-    [SerializeField] private float maxTurnSpeedAtMaxVelocity = 60f;
+    [SerializeField] private float baseTurnSpeed = 120f;
+    [SerializeField] private float turnSpeedAtMaxVelocity = 40f;
 
     private InputSystem_Actions inputActions;
-    private CharacterController characterController;
+    private Rigidbody rb;
 
     private Vector2 moveInput;
-
     private float currentSpeed;
-    private float currentTurnSpeed;
 
     private void Awake()
     {
         inputActions = new InputSystem_Actions();
-        characterController = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
     }
 
     private void OnEnable()
@@ -48,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         moveInput = context.ReadValue<Vector2>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         HandleMovement();
         HandleRotation();
@@ -57,23 +53,22 @@ public class PlayerMovement : MonoBehaviour
     private void HandleMovement()
     {
         float forwardInput = moveInput.y;
-        float turnInput = moveInput.x;
-
-        bool isTurning = Mathf.Abs(turnInput) > 0.5f;
 
         if (Mathf.Abs(forwardInput) > 0.01f)
         {
-            currentSpeed += forwardInput * acceleration * Time.deltaTime;
+            currentSpeed += forwardInput * acceleration * Time.fixedDeltaTime;
         }
         else
         {
-            currentSpeed = Mathf.MoveTowards(currentSpeed,0f,deceleration *  Time.deltaTime);
+            currentSpeed = Mathf.MoveTowards(currentSpeed,0f,deceleration * Time.fixedDeltaTime);
         }
 
         currentSpeed = Mathf.Clamp(currentSpeed,-maxBackwardSpeed,maxForwardSpeed);
 
-        Vector3 move = transform.forward * currentSpeed * -1;
-        characterController.Move(move * Time.deltaTime);
+        Vector3 velocity = rb.linearVelocity;
+        Vector3 forwardVelocity = transform.forward * currentSpeed *-1;
+
+        rb.linearVelocity = new Vector3(forwardVelocity.x,velocity.y,forwardVelocity.z);
     }
 
     private void HandleRotation()
@@ -81,20 +76,11 @@ public class PlayerMovement : MonoBehaviour
         float turnInput = moveInput.x;
 
         float speedPercent = Mathf.Abs(currentSpeed) / maxForwardSpeed;
+        float turnSpeed = Mathf.Lerp(baseTurnSpeed,turnSpeedAtMaxVelocity,speedPercent);
 
-        float effectiveMaxTurnSpeed = Mathf.Lerp(maxTurnSpeed,maxTurnSpeedAtMaxVelocity,speedPercent);
+        float rotationAmount = turnInput * turnSpeed * Time.fixedDeltaTime;
+        Quaternion deltaRotation = Quaternion.Euler(0f, rotationAmount, 0f);
 
-        if (Mathf.Abs(turnInput) > 0.01f)
-        {
-            currentTurnSpeed +=turnInput *turnAcceleration *(1f - speedPercent) *Time.deltaTime;
-        }
-        else
-        {
-            currentTurnSpeed = Mathf.MoveTowards(currentTurnSpeed,0f,turnDeceleration * Time.deltaTime);
-        }
-
-        currentTurnSpeed = Mathf.Clamp(currentTurnSpeed,-effectiveMaxTurnSpeed,effectiveMaxTurnSpeed);
-
-        transform.Rotate(Vector3.up * currentTurnSpeed * Time.deltaTime);
+        rb.MoveRotation(rb.rotation * deltaRotation);
     }
 }
