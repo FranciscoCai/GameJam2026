@@ -7,9 +7,11 @@ public class PlayerCamMovemen : MonoBehaviour
     [SerializeField] private float mouseSensitivity = 2.5f;
     [SerializeField] private float gamepadSensitivity = 120f;
 
-    [Header("Free Look")]
+    [Header("Free Look Limits")]
     [SerializeField] private Vector2 verticalClamp = new Vector2(-60f, 60f);
     [SerializeField] private Vector2 horizontalClamp = new Vector2(-90f, 90f);
+
+    [Header("Gamepad Return")]
     [SerializeField] private float returnSpeed = 5f;
     [SerializeField] private float deadZone = 0.05f;
 
@@ -17,7 +19,6 @@ public class PlayerCamMovemen : MonoBehaviour
 
     private InputSystem_Actions inputActions;
     private Vector2 lookInput;
-
     private Vector2 lookOffset;
 
     private void Awake()
@@ -47,23 +48,24 @@ public class PlayerCamMovemen : MonoBehaviour
 
     private void LateUpdate()
     {
-        HandleFreeLook();
+        HandleLook();
         ApplyRotation();
     }
 
-    private void HandleFreeLook()
+    private void HandleLook()
     {
+        bool isGamepad = IsUsingGamepad();
         bool hasInput = lookInput.sqrMagnitude > deadZone * deadZone;
+
+        float sensitivity = GetSensitivity();
+        Vector2 delta = lookInput * sensitivity;
 
         if (hasInput)
         {
-            float sensitivity = GetSensitivity();
-            Vector2 delta = lookInput * sensitivity;
-
             lookOffset.x += delta.x;
             lookOffset.y -= delta.y;
         }
-        else
+        else if (isGamepad)
         {
             lookOffset = Vector2.Lerp(lookOffset,Vector2.zero,returnSpeed * Time.deltaTime);
         }
@@ -79,13 +81,15 @@ public class PlayerCamMovemen : MonoBehaviour
 
     private float GetSensitivity()
     {
-        if (playerInput == null)
-            return mouseSensitivity;
+        if (playerInput == null) return mouseSensitivity;
 
         return playerInput.currentControlScheme switch
         {
-            "Gamepad" => gamepadSensitivity * Time.deltaTime,
-            _ => mouseSensitivity
-        };
+            "Gamepad" => gamepadSensitivity * Time.deltaTime,_ => mouseSensitivity};
+        }
+
+    private bool IsUsingGamepad()
+    {
+        return playerInput != null &&playerInput.currentControlScheme == "Gamepad";
     }
 }
