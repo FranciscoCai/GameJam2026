@@ -54,6 +54,7 @@ MonoBehaviour:
     serializedVersion: 2
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     x: 672
     y: -1434
     width: 1103
@@ -61,11 +62,16 @@ MonoBehaviour:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
     x: 651
     y: -1433
     width: 676
     height: 2273
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -91,10 +97,15 @@ MonoBehaviour:
   - {fileID: 8926484042661614909}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - {fileID: 8926484042661615010}
   - {fileID: 8926484042661615072}
   - {fileID: 8926484042661615089}
   - {fileID: 8926484042661615104}
+=======
+  - {fileID: 8926484042661614914}
+  - {fileID: 8926484042661614934}
+>>>>>>> Stashed changes
 =======
   - {fileID: 8926484042661614914}
   - {fileID: 8926484042661614934}
@@ -2964,7 +2975,11 @@ MonoBehaviour:
   m_LinkedSlots: []
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!114 &8926484042661615010
+=======
+--- !u!114 &8926484042661614914
+>>>>>>> Stashed changes
 =======
 --- !u!114 &8926484042661614914
 >>>>>>> Stashed changes
@@ -2979,6 +2994,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: 9dfea48843f53fc438eabc12a3a30abc, type: 3}
@@ -3008,6 +3024,8 @@ MonoBehaviour:
       slotIndex: 0
 --- !u!114 &8926484042661615011
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
   m_Script: {fileID: 11500000, guid: 330e0fca1717dde4aaa144f48232aa64, type: 3}
@@ -3051,6 +3069,9 @@ MonoBehaviour:
     supecollapsed: 0
 --- !u!114 &8926484042661614915
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -3062,6 +3083,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: 1b605c022ee79394a8a776c0869b3f9a, type: 3}
@@ -3095,6 +3117,8 @@ MonoBehaviour:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
   m_Script: {fileID: 11500000, guid: a9f9544b71b7dab44a4644b6807e8bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.VisualEffectGraph.Editor::UnityEditor.VFX.VFXSlotVector
@@ -3123,6 +3147,9 @@ MonoBehaviour:
   m_LinkedSlots: []
 --- !u!114 &8926484042661614916
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -3140,6 +3167,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Parent: {fileID: 8926484042661615011}
   m_Children:
   - {fileID: 8926484042661615013}
@@ -3152,6 +3180,8 @@ MonoBehaviour:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
   m_Parent: {fileID: 8926484042661614915}
   m_Children:
   - {fileID: 8926484042661614917}
@@ -3162,6 +3192,9 @@ MonoBehaviour:
   m_UISuperCollapsed: 0
   m_MasterSlot: {fileID: 8926484042661614915}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -3175,6 +3208,7 @@ MonoBehaviour:
   m_Property:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     name: center
     m_serializedType:
       m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -3185,6 +3219,8 @@ MonoBehaviour:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
     name: vector
     m_serializedType:
       m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -3193,6 +3229,9 @@ MonoBehaviour:
   m_LinkedSlots: []
 --- !u!114 &8926484042661614917
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -3210,7 +3249,11 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Parent: {fileID: 8926484042661615012}
+=======
+  m_Parent: {fileID: 8926484042661614916}
+>>>>>>> Stashed changes
 =======
   m_Parent: {fileID: 8926484042661614916}
 >>>>>>> Stashed changes
@@ -3223,7 +3266,11 @@ MonoBehaviour:
   m_UISuperCollapsed: 0
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_MasterSlot: {fileID: 8926484042661615011}
+=======
+  m_MasterSlot: {fileID: 8926484042661614915}
+>>>>>>> Stashed changes
 =======
   m_MasterSlot: {fileID: 8926484042661614915}
 >>>>>>> Stashed changes
@@ -3244,10 +3291,13 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Direction: 0
   m_LinkedSlots: []
 --- !u!114 &8926484042661615014
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
   m_Direction: 1
@@ -3255,6 +3305,9 @@ MonoBehaviour:
   - {fileID: 8926484042661614611}
 --- !u!114 &8926484042661614918
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -3272,7 +3325,11 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Parent: {fileID: 8926484042661615012}
+=======
+  m_Parent: {fileID: 8926484042661614916}
+>>>>>>> Stashed changes
 =======
   m_Parent: {fileID: 8926484042661614916}
 >>>>>>> Stashed changes
@@ -3285,7 +3342,11 @@ MonoBehaviour:
   m_UISuperCollapsed: 0
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_MasterSlot: {fileID: 8926484042661615011}
+=======
+  m_MasterSlot: {fileID: 8926484042661614915}
+>>>>>>> Stashed changes
 =======
   m_MasterSlot: {fileID: 8926484042661614915}
 >>>>>>> Stashed changes
@@ -3306,9 +3367,15 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Direction: 0
   m_LinkedSlots: []
 --- !u!114 &8926484042661615015
+=======
+  m_Direction: 1
+  m_LinkedSlots: []
+--- !u!114 &8926484042661614919
+>>>>>>> Stashed changes
 =======
   m_Direction: 1
   m_LinkedSlots: []
@@ -3333,7 +3400,11 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Parent: {fileID: 8926484042661615012}
+=======
+  m_Parent: {fileID: 8926484042661614916}
+>>>>>>> Stashed changes
 =======
   m_Parent: {fileID: 8926484042661614916}
 >>>>>>> Stashed changes
@@ -3346,7 +3417,11 @@ MonoBehaviour:
   m_UISuperCollapsed: 0
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_MasterSlot: {fileID: 8926484042661615011}
+=======
+  m_MasterSlot: {fileID: 8926484042661614915}
+>>>>>>> Stashed changes
 =======
   m_MasterSlot: {fileID: 8926484042661614915}
 >>>>>>> Stashed changes
@@ -3367,9 +3442,15 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Direction: 0
   m_LinkedSlots: []
 --- !u!114 &8926484042661615016
+=======
+  m_Direction: 1
+  m_LinkedSlots: []
+--- !u!114 &8926484042661614934
+>>>>>>> Stashed changes
 =======
   m_Direction: 1
   m_LinkedSlots: []
@@ -3388,6 +3469,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: ac39bd03fca81b849929b9c966f1836a, type: 3}
@@ -3434,12 +3516,17 @@ MonoBehaviour:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
   m_Script: {fileID: 11500000, guid: 330e0fca1717dde4aaa144f48232aa64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.VisualEffectGraph.Editor::UnityEditor.VFX.VFXParameter
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -3447,6 +3534,7 @@ MonoBehaviour:
   m_UIPosition: {x: 0, y: 0}
   m_UICollapsed: 1
   m_UISuperCollapsed: 0
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
   m_MasterSlot: {fileID: 8926484042661615011}
@@ -3534,6 +3622,8 @@ MonoBehaviour:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661614935}
@@ -3565,6 +3655,9 @@ MonoBehaviour:
     supecollapsed: 0
 --- !u!114 &8926484042661614935
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -3584,6 +3677,7 @@ MonoBehaviour:
   m_Children:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - {fileID: 8926484042661615021}
   - {fileID: 8926484042661615022}
   - {fileID: 8926484042661615023}
@@ -3596,6 +3690,8 @@ MonoBehaviour:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
   - {fileID: 8926484042661614936}
   - {fileID: 8926484042661614937}
   - {fileID: 8926484042661614938}
@@ -3606,6 +3702,9 @@ MonoBehaviour:
   m_MasterData:
     m_Owner: {fileID: 8926484042661614934}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -3613,6 +3712,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
       m_SerializableObject: '{"x":0.0,"y":0.0,"z":0.0}'
@@ -3628,6 +3728,8 @@ MonoBehaviour:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
       m_SerializableObject: 
     m_Space: -1
   m_Property:
@@ -3640,6 +3742,9 @@ MonoBehaviour:
   - {fileID: 8926484042661614890}
 --- !u!114 &8926484042661614936
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -3657,7 +3762,11 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Parent: {fileID: 8926484042661615020}
+=======
+  m_Parent: {fileID: 8926484042661614935}
+>>>>>>> Stashed changes
 =======
   m_Parent: {fileID: 8926484042661614935}
 >>>>>>> Stashed changes
@@ -3670,7 +3779,11 @@ MonoBehaviour:
   m_UISuperCollapsed: 0
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_MasterSlot: {fileID: 8926484042661615020}
+=======
+  m_MasterSlot: {fileID: 8926484042661614935}
+>>>>>>> Stashed changes
 =======
   m_MasterSlot: {fileID: 8926484042661614935}
 >>>>>>> Stashed changes
@@ -3691,9 +3804,15 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Direction: 0
   m_LinkedSlots: []
 --- !u!114 &8926484042661615022
+=======
+  m_Direction: 1
+  m_LinkedSlots: []
+--- !u!114 &8926484042661614937
+>>>>>>> Stashed changes
 =======
   m_Direction: 1
   m_LinkedSlots: []
@@ -3718,7 +3837,11 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Parent: {fileID: 8926484042661615020}
+=======
+  m_Parent: {fileID: 8926484042661614935}
+>>>>>>> Stashed changes
 =======
   m_Parent: {fileID: 8926484042661614935}
 >>>>>>> Stashed changes
@@ -3731,7 +3854,11 @@ MonoBehaviour:
   m_UISuperCollapsed: 0
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_MasterSlot: {fileID: 8926484042661615020}
+=======
+  m_MasterSlot: {fileID: 8926484042661614935}
+>>>>>>> Stashed changes
 =======
   m_MasterSlot: {fileID: 8926484042661614935}
 >>>>>>> Stashed changes
@@ -3752,9 +3879,15 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Direction: 0
   m_LinkedSlots: []
 --- !u!114 &8926484042661615023
+=======
+  m_Direction: 1
+  m_LinkedSlots: []
+--- !u!114 &8926484042661614938
+>>>>>>> Stashed changes
 =======
   m_Direction: 1
   m_LinkedSlots: []
@@ -3779,7 +3912,11 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Parent: {fileID: 8926484042661615020}
+=======
+  m_Parent: {fileID: 8926484042661614935}
+>>>>>>> Stashed changes
 =======
   m_Parent: {fileID: 8926484042661614935}
 >>>>>>> Stashed changes
@@ -3792,7 +3929,11 @@ MonoBehaviour:
   m_UISuperCollapsed: 0
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_MasterSlot: {fileID: 8926484042661615020}
+=======
+  m_MasterSlot: {fileID: 8926484042661614935}
+>>>>>>> Stashed changes
 =======
   m_MasterSlot: {fileID: 8926484042661614935}
 >>>>>>> Stashed changes
@@ -3811,6 +3952,7 @@ MonoBehaviour:
     m_serializedType:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
   m_Direction: 0
@@ -5770,6 +5912,9 @@ MonoBehaviour:
       m_SerializableType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
   m_Direction: 0
+=======
+  m_Direction: 1
+>>>>>>> Stashed changes
 =======
   m_Direction: 1
 >>>>>>> Stashed changes
