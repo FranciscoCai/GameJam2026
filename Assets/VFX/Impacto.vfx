@@ -16,10 +16,10 @@ MonoBehaviour:
   - title: Burst
     position:
       serializedVersion: 2
-      x: 264
+      x: 265
       y: 294
-      width: 477
-      height: 2167
+      width: 476
+      height: 2171
     contents:
     - model: {fileID: 8926484042661614700}
       id: 0
@@ -40,7 +40,7 @@ MonoBehaviour:
     x: 62
     y: 294
     width: 679
-    height: 2171
+    height: 2172
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -78,7 +78,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":0.07999999821186066,"y":1.0,"z":0.0}'
+      m_SerializableObject: '{"x":0.20000000298023225,"y":100.0,"z":0.0}'
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -505,7 +505,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661614929}
-  m_UIPosition: {x: 290, y: 1546}
+  m_UIPosition: {x: 290, y: 1669}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -543,7 +543,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614779}
   - {fileID: 8926484042661614952}
   - {fileID: 8926484042661614975}
-  m_UIPosition: {x: 290, y: 1889}
+  m_UIPosition: {x: 290, y: 1890}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -621,7 +621,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"49cb5aa34272b034d8b754c65d9cdbfa","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"3a461ca3c261d58499193eecb6d7b309","type":3}}'
     m_Space: -1
   m_Property:
     name: mainTexture
@@ -2734,7 +2734,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":0.07999999821186066,"y":1.0,"z":0.0}'
+      m_SerializableObject: '{"x":0.20000000298023225,"y":100.0,"z":0.0}'
     m_Space: -1
   m_Property:
     name: o

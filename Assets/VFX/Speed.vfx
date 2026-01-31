@@ -78,7 +78,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":0.10000000149011612,"y":0.0,"z":0.0}'
+      m_SerializableObject: '{"x":0.30000001192092898,"y":0.0,"z":0.0}'
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -210,7 +210,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 32
+      m_SerializableObject: 40
     m_Space: -1
   m_Property:
     name: Rate
@@ -583,7 +583,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"6c69572945a4fcb4692a0a126f26638f","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"3a461ca3c261d58499193eecb6d7b309","type":3}}'
     m_Space: -1
   m_Property:
     name: mainTexture
@@ -2475,7 +2475,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: -2
+      m_SerializableObject: -100
     m_Space: -1
   m_Property:
     name: attractionSpeed
@@ -2509,7 +2509,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 10
+      m_SerializableObject: 25
     m_Space: -1
   m_Property:
     name: attractionForce
@@ -2990,7 +2990,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":0.10000000149011612,"y":0.0,"z":0.0}'
+      m_SerializableObject: '{"x":0.30000001192092898,"y":0.0,"z":0.0}'
     m_Space: -1
   m_Property:
     name: o
