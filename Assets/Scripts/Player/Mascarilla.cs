@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.InputSystem;
 
 public class Mascarilla : MonoBehaviour
@@ -45,11 +46,7 @@ public class Mascarilla : MonoBehaviour
 
     private void Update()
     {
-        if (isReturning)
-        {
-            ReturnToStart();
-        }
-        else
+        if (!isReturning)
         {
             FallDown();
         }
@@ -61,14 +58,18 @@ public class Mascarilla : MonoBehaviour
         rectTransform.anchoredPosition += Vector2.down * fallSpeed * Time.deltaTime;
     }
 
-    private void ReturnToStart()
+    private IEnumerator ReturnToStartCoroutine()
     {
-        rectTransform.anchoredPosition = Vector2.MoveTowards(rectTransform.anchoredPosition,startPosition,returnSpeed * Time.deltaTime);
-
-        if (Vector2.Distance(rectTransform.anchoredPosition, startPosition) < 0.1f)
+        yield return new WaitForSeconds(1f);
+        while (Vector2.Distance(rectTransform.anchoredPosition, startPosition) > 0.1f)
         {
-            rectTransform.anchoredPosition = startPosition;FinishReturn();
+            rectTransform.anchoredPosition = Vector2.MoveTowards(rectTransform.anchoredPosition, startPosition, returnSpeed * Time.deltaTime);
+            yield return null;
         }
+
+        yield return new WaitForSeconds(1f);
+        rectTransform.anchoredPosition = startPosition;
+        FinishReturn();
     }
 
     private void OnInteract(InputAction.CallbackContext context)
@@ -76,6 +77,7 @@ public class Mascarilla : MonoBehaviour
         if (isReturning) return;
 
         isReturning = true;
+        StartCoroutine(ReturnToStartCoroutine());
 
         if (movementScript != null)movementScript.enabled = false;
 
