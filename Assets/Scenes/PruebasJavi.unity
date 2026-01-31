@@ -1047,22 +1047,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3290004333677777240, guid: 3d6ba0d06b3f9cb42b2550914c4be40d, type: 3}
-      propertyPath: deadZone
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3290004333677777240, guid: 3d6ba0d06b3f9cb42b2550914c4be40d, type: 3}
-      propertyPath: returnSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3290004333677777240, guid: 3d6ba0d06b3f9cb42b2550914c4be40d, type: 3}
-      propertyPath: horizontalClamp.x
-      value: -50
-      objectReference: {fileID: 0}
-    - target: {fileID: 3290004333677777240, guid: 3d6ba0d06b3f9cb42b2550914c4be40d, type: 3}
-      propertyPath: horizontalClamp.y
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 5953323787151945571, guid: 3d6ba0d06b3f9cb42b2550914c4be40d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.294
