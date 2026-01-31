@@ -34,8 +34,8 @@ public class ItemCollision : MonoBehaviour
             }
             if (worldItem != null)
             {
-                Instantiate(PickParticle, worldItem.transform.position, Quaternion.identity);
-                StartCoroutine(DestroyParticle(PickParticle));
+                GameObject instantiateObject = Instantiate(PickParticle, worldItem.transform.position, Quaternion.identity);
+                StartCoroutine(DestroyParticle(instantiateObject));
                 inventory.AddItem(worldItem);
             }
         }
