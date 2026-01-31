@@ -7,6 +7,8 @@ public class ItemSpawnerManager : MonoBehaviour
 {
     public static ItemSpawnerManager instance;
     private List<ItemSpawner> itemSpawners = new List<ItemSpawner>();
+    [SerializeField] private float spawnIntervalMin = 1f;
+    [SerializeField] private float spawnIntervalMax = 3f;
     private void Awake()
     {
         if(instance == null)
@@ -41,7 +43,7 @@ public class ItemSpawnerManager : MonoBehaviour
             }
             int index = Random.Range(0, itemSpawners.Count);
             itemSpawners[index].SpawnItem();
-            yield return new WaitForSeconds(Random.Range(1f, 3f));
+            yield return new WaitForSeconds(Random.Range(spawnIntervalMin, spawnIntervalMax));
         }
     }
 

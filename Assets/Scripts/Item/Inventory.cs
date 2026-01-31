@@ -7,11 +7,19 @@ public class Inventory : MonoBehaviour
     public GameObject[] inventoryItems;
     [SerializeField] private int removeItemMin = 2;
     [SerializeField] private int removeItemMax = 4;
-    //public GameObject startItemData;
     private void Start()
     {
-        //AddItem(startItemData.GetComponent<WorldItem>());
-        //Invoke(nameof(RemoveItem), 5f);
+    }
+    public bool HasItem(WorldItem worldItem)
+    {
+        for (int i = 0; i < items.Count; i++)
+        {
+            if (worldItem.itemData == items[i])
+            {
+                return true;
+            }
+        }
+        return false; 
     }
     public void AddItem(WorldItem item)
     {
@@ -27,6 +35,7 @@ public class Inventory : MonoBehaviour
                 inventoryMeshFilter.mesh = worldItemMeshFilter.mesh;
                 inventoryMeshRenderer.material = worldItemMeshRenderer.material;
             }
+            item.itemSpawner.AddToItemManagerSpawnerList();
             items.Add(item.itemData);
             Destroy(item.gameObject);
         }

@@ -16,7 +16,9 @@ public class ItemSpawner : MonoBehaviour
     }
     public void SpawnItem()
     {
-        Instantiate(itemData.prefab, gameObject.transform.position, gameObject.transform.rotation);
+        GameObject instantiateItem = Instantiate(itemData.prefab, gameObject.transform.position, gameObject.transform.rotation);
+        WorldItem worldItem = instantiateItem.GetComponent<WorldItem>();
+        worldItem.itemSpawner = this;
         ItemSpawnerManager.instance.removeFromItemSpawnerList(this);
     }
     public void AddToItemManagerSpawnerList()
