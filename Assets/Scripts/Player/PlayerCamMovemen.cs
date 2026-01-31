@@ -3,22 +3,27 @@ using UnityEngine.InputSystem;
 
 public class PlayerCamMovemen : MonoBehaviour
 {
-    [Header("Look Settings")]
+    [Header("Sensitivity")]
     [SerializeField] private float mouseSensitivity = 2.5f;
     [SerializeField] private float gamepadSensitivity = 120f;
-    [SerializeField] private Vector2 verticalClamp = new Vector2(-80f, 80f);
 
-    private InputSystem_Actions inputActions;
+    [Header("Free Look")]
+    [SerializeField] private Vector2 verticalClamp = new Vector2(-60f, 60f);
+    [SerializeField] private Vector2 horizontalClamp = new Vector2(-90f, 90f);
+    [SerializeField] private float returnSpeed = 5f;
+    [SerializeField] private float deadZone = 0.05f;
+
     private PlayerInput playerInput;
 
+    private InputSystem_Actions inputActions;
     private Vector2 lookInput;
-    private float xRotation;
-    private float yRotation;
+
+    private Vector2 lookOffset;
 
     private void Awake()
     {
-        inputActions = new InputSystem_Actions();
         playerInput = GetComponentInParent<PlayerInput>();
+        inputActions = new InputSystem_Actions();
     }
 
     private void OnEnable()
@@ -42,28 +47,45 @@ public class PlayerCamMovemen : MonoBehaviour
 
     private void LateUpdate()
     {
-        float sensitivity = GetCurrentSensitivity();
-        RotateCamera(sensitivity);
+        HandleFreeLook();
+        ApplyRotation();
     }
 
-    private float GetCurrentSensitivity()
+    private void HandleFreeLook()
     {
+        bool hasInput = lookInput.sqrMagnitude > deadZone * deadZone;
+
+        if (hasInput)
+        {
+            float sensitivity = GetSensitivity();
+            Vector2 delta = lookInput * sensitivity;
+
+            lookOffset.x += delta.x;
+            lookOffset.y -= delta.y;
+        }
+        else
+        {
+            lookOffset = Vector2.Lerp(lookOffset,Vector2.zero,returnSpeed * Time.deltaTime);
+        }
+
+        lookOffset.x = Mathf.Clamp(lookOffset.x, horizontalClamp.x, horizontalClamp.y);
+        lookOffset.y = Mathf.Clamp(lookOffset.y, verticalClamp.x, verticalClamp.y);
+    }
+
+    private void ApplyRotation()
+    {
+        transform.localRotation = Quaternion.Euler(lookOffset.y,lookOffset.x,0f);
+    }
+
+    private float GetSensitivity()
+    {
+        if (playerInput == null)
+            return mouseSensitivity;
+
         return playerInput.currentControlScheme switch
         {
             "Gamepad" => gamepadSensitivity * Time.deltaTime,
             _ => mouseSensitivity
         };
-    }
-
-    private void RotateCamera(float sensitivity)
-    {
-        Vector2 delta = lookInput * sensitivity;
-
-        xRotation -= delta.y;
-        xRotation = Mathf.Clamp(xRotation, verticalClamp.x, verticalClamp.y);
-
-        yRotation += delta.x;
-
-        transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
     }
 }

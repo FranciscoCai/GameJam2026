@@ -298,6 +298,9 @@ MonoBehaviour:
   mouseSensitivity: 0.05
   gamepadSensitivity: 120
   verticalClamp: {x: -25, y: 30}
+  horizontalClamp: {x: -50, y: 50}
+  returnSpeed: 3
+  deadZone: 0.1
 --- !u!1 &5889805041313038634
 GameObject:
   m_ObjectHideFlags: 0
