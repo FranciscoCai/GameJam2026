@@ -8,16 +8,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float deceleration = 10f;
     [SerializeField] private float maxForwardSpeed = 12f;
     [SerializeField] private float maxBackwardSpeed = 6f;
+    [SerializeField] private float rotationSpeedFactor = 0.5f; // cuánto reduce la velocidad al girar
 
     [Header("Rotation")]
-    [SerializeField] private float baseTurnSpeed = 120f;
-    [SerializeField] private float turnSpeedAtMaxVelocity = 40f;
+    [SerializeField] private float rotationAcceleration = 180f; // grados/s²
+    [SerializeField] private float rotationDeceleration = 360f; // grados/s²
+    [SerializeField] private float maxRotationSpeed = 180f; // grados/s
 
     private InputSystem_Actions inputActions;
     private Rigidbody rb;
 
     private Vector2 moveInput;
-    private float currentSpeed;
+
+    private float currentSpeed;         // velocidad forward/back
+    private float currentRotationSpeed; // velocidad angular Y
 
     private void Awake()
     {
@@ -46,13 +50,36 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        HandleMovement();
         HandleRotation();
+        HandleMovement();
+    }
+
+    private void HandleRotation()
+    {
+        float turnInput = moveInput.x;
+
+        if (Mathf.Abs(turnInput) > 0.01f)
+        {
+            currentRotationSpeed += turnInput * rotationAcceleration * Time.fixedDeltaTime;
+        }
+        else
+        {
+            currentRotationSpeed = Mathf.MoveTowards(currentRotationSpeed,0f,rotationDeceleration * Time.fixedDeltaTime);
+        }
+
+        currentRotationSpeed = Mathf.Clamp(currentRotationSpeed,-maxRotationSpeed,maxRotationSpeed);
+
+        if (Mathf.Abs(currentRotationSpeed) > 0.01f)
+        {
+            Quaternion deltaRotation = Quaternion.Euler(0f, currentRotationSpeed * Time.fixedDeltaTime, 0f);rb.MoveRotation(rb.rotation * deltaRotation);
+        }
     }
 
     private void HandleMovement()
     {
         float forwardInput = moveInput.y;
+
+        float speedModifier = 1f - Mathf.Min(Mathf.Abs(currentRotationSpeed) / maxRotationSpeed, 1f) * rotationSpeedFactor;
 
         if (Mathf.Abs(forwardInput) > 0.01f)
         {
@@ -63,24 +90,13 @@ public class PlayerMovement : MonoBehaviour
             currentSpeed = Mathf.MoveTowards(currentSpeed,0f,deceleration * Time.fixedDeltaTime);
         }
 
-        currentSpeed = Mathf.Clamp(currentSpeed,-maxBackwardSpeed,maxForwardSpeed);
+        currentSpeed = Mathf.Clamp(currentSpeed, -maxBackwardSpeed, maxForwardSpeed);
+
+        float finalSpeed = currentSpeed * speedModifier;
 
         Vector3 velocity = rb.linearVelocity;
-        Vector3 forwardVelocity = transform.forward * currentSpeed *-1;
+        Vector3 forwardVelocity = transform.forward * finalSpeed;
 
         rb.linearVelocity = new Vector3(forwardVelocity.x,velocity.y,forwardVelocity.z);
-    }
-
-    private void HandleRotation()
-    {
-        float turnInput = moveInput.x;
-
-        float speedPercent = Mathf.Abs(currentSpeed) / maxForwardSpeed;
-        float turnSpeed = Mathf.Lerp(baseTurnSpeed,turnSpeedAtMaxVelocity,speedPercent);
-
-        float rotationAmount = turnInput * turnSpeed * Time.fixedDeltaTime;
-        Quaternion deltaRotation = Quaternion.Euler(0f, rotationAmount, 0f);
-
-        rb.MoveRotation(rb.rotation * deltaRotation);
     }
 }
