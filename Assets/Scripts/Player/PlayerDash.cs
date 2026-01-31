@@ -11,6 +11,7 @@ public class PlayerDash : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private VfxCollision vfx;
 
     private InputSystem_Actions inputActions;
     private Rigidbody rb;
@@ -47,9 +48,8 @@ public class PlayerDash : MonoBehaviour
     {
         isDashing = true;
 
-        // Desactivar movimiento base
-        if (playerMovement != null)
-            playerMovement.enabled = false;
+        if (playerMovement != null)playerMovement.enabled = false;
+        if (vfx != null) vfx.enabled = true;
 
         float currentSpeed = dashMaxSpeed;
 
@@ -67,5 +67,6 @@ public class PlayerDash : MonoBehaviour
         isDashing = false;
 
         if (playerMovement != null)playerMovement.enabled = true;
+        if (vfx != null) vfx.enabled = false;
     }
 }
