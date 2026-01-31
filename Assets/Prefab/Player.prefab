@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 4393900750521186379}
   - component: {fileID: 959163787197424355}
   - component: {fileID: 7118248831130346860}
-  - component: {fileID: 6487762708626637406}
+  - component: {fileID: 3583925157998610360}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -452,11 +452,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   acceleration: 3
-  deceleration: 1.5
-  maxForwardSpeed: 2
-  maxBackwardSpeed: 1
-  baseTurnSpeed: 120
-  turnSpeedAtMaxVelocity: 40
+  deceleration: 2
+  maxForwardSpeed: 5
+  maxBackwardSpeed: 3
+  baseTurnSpeed: 100
+  turnSpeedAtMaxVelocity: 80
 --- !u!54 &7118248831130346860
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -482,10 +482,10 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 116
   m_CollisionDetection: 1
---- !u!65 &6487762708626637406
-BoxCollider:
+--- !u!136 &3583925157998610360
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -502,6 +502,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 0.75, z: 1.8}
-  m_Center: {x: 0, y: -0.67, z: -0.9}
+  serializedVersion: 2
+  m_Radius: 0.4
+  m_Height: 1.75
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.2, z: 0}
