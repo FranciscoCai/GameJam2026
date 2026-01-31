@@ -4,6 +4,7 @@ using UnityEngine;
 public class ItemCollision : MonoBehaviour
 {
     [SerializeField] private Inventory inventory;
+    [SerializeField] private GameObject PickParticle;
     private void OnTriggerEnter(Collider other)
     {
         if (inventory != null)
@@ -32,6 +33,7 @@ public class ItemCollision : MonoBehaviour
             }
             if (worldItem != null)
             {
+                Instantiate(PickParticle, worldItem.transform.position, Quaternion.identity);
                 inventory.AddItem(worldItem);
             }
         }
